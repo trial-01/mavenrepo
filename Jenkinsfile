@@ -1,4 +1,3 @@
-
 pipeline{
     agent any
     triggers {
@@ -14,6 +13,11 @@ pipeline{
             steps{
                 sh 'mvn package'
             }
+        }
+    }
+    post{
+        always{
+             slackSend channel: 'jenkins-build'
         }
     }
 }
