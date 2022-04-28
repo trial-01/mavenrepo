@@ -17,7 +17,7 @@ pipeline{
     }
     post{
         always{
-             slackSend channel: 'jenkins-build'
+             slackSend channel: 'jenkins-build', message: 'new build up', teamDomain: 'trial1', tokenCredentialId: 'slack-token1'
         }
     }
 }
